@@ -1,4 +1,6 @@
-# gin-go-metrics - [gin-gonic/gin](https://github.com/gin-gonic/gin) middleware to gather and store metrics using [rcrowley/go-metrics](https://github.com/rcrowley/go-metrics)
+# gin-go-metrics
+ 
+gin-go-metrics is [gin-gonic/gin](https://github.com/gin-gonic/gin) middleware to gather and store metrics using [rcrowley/go-metrics](https://github.com/rcrowley/go-metrics)
 
 ## How to use
 
@@ -18,11 +20,11 @@ import (
 
 func main(){
 	err := gin_metrics.Setup(
-		"graphite",
-		"localhost",
-		2003,
-		"server",
-		time.Minute,
+		"graphite",  // clientType
+		"localhost", // graphite host
+		2003,        // graphite port
+		"server",    // metrics prefix
+		time.Minute, // graphite flushInterval
 	)
 	if err != nil {
 		fmt.Printf("Failed to set up monitoring: %s\n", err)
@@ -60,11 +62,11 @@ import (
 
 func main(){
 	err := gin_metrics.Setup(
-		"graphite",
-		"localhost",
-		2003,
-		"server",
-		time.Minute,
+		"graphite",  // clientType
+		"localhost", // graphite host
+		2003,        // graphite port
+		"server",    // metrics prefix
+		time.Minute, // graphite flushInterval
 	)
 	if err != nil {
 		fmt.Printf("Failed to set up monitoring: %s\n", err)
