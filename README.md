@@ -1,5 +1,5 @@
 # gin-go-metrics
- 
+
 gin-go-metrics is [gin-gonic/gin](https://github.com/gin-gonic/gin) middleware to gather and store metrics using [rcrowley/go-metrics](https://github.com/rcrowley/go-metrics)
 
 ## How to use
