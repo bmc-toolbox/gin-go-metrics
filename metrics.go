@@ -82,14 +82,14 @@ func Setup(clientType string, host string, port int, prefix string, flushInterva
 	}
 
 	//go routine that stores data
-	go emm.store(clientType)
+	go emm.store()
 
 	return err
 }
 
 //- writes/updates metric key/vals to registry
 //- register and write metrics to the go-metrics registries.
-func (e *emitter) store(clientType string) {
+func (e *emitter) store() {
 	//A map of metric names to go-metrics registry
 	goMetricsRegistry := make(map[string]interface{})
 
@@ -100,11 +100,6 @@ func (e *emitter) store(clientType string) {
 		}
 
 		key := strings.Join(data.Key, ".")
-
-		if clientType == "graphite" {
-			// replace slashes with underscores as they will be replaced by dots in Graphite otherwise
-			key = strings.Replace(key, "/", "_", -1)
-		}
 
 		//register the metric with go-metrics,
 		//the metric key is used as the identifier.

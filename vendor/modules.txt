@@ -1,5 +1,7 @@
 # github.com/cyberdelia/go-metrics-graphite v0.0.0-20161219230853-39f87cc3b432
 github.com/cyberdelia/go-metrics-graphite
+# github.com/davecgh/go-spew v1.1.1
+github.com/davecgh/go-spew/spew
 # github.com/gin-contrib/sse v0.0.0-20190301062529-5545eab6dad3
 github.com/gin-contrib/sse
 # github.com/gin-gonic/gin v1.3.0
@@ -19,10 +21,14 @@ github.com/mattn/go-isatty
 github.com/modern-go/concurrent
 # github.com/modern-go/reflect2 v1.0.1
 github.com/modern-go/reflect2
+# github.com/pmezard/go-difflib v1.0.0
+github.com/pmezard/go-difflib/difflib
 # github.com/rcrowley/go-metrics v0.0.0-20181016184325-3113b8401b8a
 github.com/rcrowley/go-metrics
 # github.com/sirupsen/logrus v1.4.1
 github.com/sirupsen/logrus
+# github.com/stretchr/testify v1.2.2
+github.com/stretchr/testify/assert
 # github.com/ugorji/go v1.1.4
 github.com/ugorji/go/codec
 # golang.org/x/sys v0.0.0-20190222072716-a9d3bda3a223
