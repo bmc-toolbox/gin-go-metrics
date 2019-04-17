@@ -80,7 +80,7 @@ func main() {
 		os.Exit(1)
 	}
 	// collect data using provided functions with provided arguments once a minute
-	go metrics.Scheduler(time.Minute, metrics.GoRuntimeStats, []string{""})
+	go metrics.Scheduler(time.Minute, metrics.GoRuntimeStats, []string{})
 	go metrics.Scheduler(time.Minute, metrics.MeasureRuntime, []string{"uptime"}, time.Now())
 
 	//<...>

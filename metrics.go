@@ -199,17 +199,8 @@ func UpdateHistogram(key []string, value int64) {
 	emm.metricsChan <- d
 }
 
-// MeasureRuntime measures time elapsed since invocation
-func MeasureRuntime(key []string, start time.Time) {
-	//convert time.Duration to milliseconds
-	elapsed := int64(time.Since(start) / time.Millisecond)
-	UpdateGauge(key, elapsed)
-}
-
 // Close runs cleanup actions
 func Close(printStats bool) {
-	close(emm.metricsChan)
-
 	if printStats {
 		log.Info(emm.registry.GetAll())
 	}
