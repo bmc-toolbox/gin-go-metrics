@@ -1,10 +1,11 @@
 package metrics
 
 import (
-	"github.com/rcrowley/go-metrics"
-	"github.com/stretchr/testify/assert"
 	"testing"
 	"time"
+
+	"github.com/rcrowley/go-metrics"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestMetricsStoreGraphite(t *testing.T) {
