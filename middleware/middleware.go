@@ -26,6 +26,7 @@ package middleware
 import (
 	"fmt"
 	"net/http"
+	"net/url"
 	"strconv"
 	"strings"
 	"sync"
@@ -63,14 +64,14 @@ type Metrics struct {
 func NewMetrics(expandedParams []string) *Metrics {
 	return &Metrics{
 		ReqCntURLLabelMappingFn: func(c *gin.Context) string {
-			url := c.Request.URL.EscapedPath() // i.e. by default do nothing, i.e. return URL as is
+			u := c.Request.URL.EscapedPath() // i.e. by default do nothing, i.e. return URL as is
 			for _, p := range c.Params {
 				if contains(expandedParams, p.Key) {
 					continue
 				}
-				url = strings.Replace(url, p.Value, ":"+p.Key, 1)
+				u = strings.Replace(u, url.QueryEscape(p.Value), ":"+p.Key, 1)
 			}
-			return url
+			return u
 		},
 	}
 }
