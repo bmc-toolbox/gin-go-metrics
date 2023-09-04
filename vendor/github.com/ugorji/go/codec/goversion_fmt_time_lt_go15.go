@@ -6,4 +6,11 @@
 
 package codec
 
-var genCheckVendor = false
+import "time"
+
+func fmtTime(t time.Time, fmt string, b []byte) []byte {
+	s := t.Format(fmt)
+	b = b[:len(s)]
+	copy(b, s)
+	return b
+}
